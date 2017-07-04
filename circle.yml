@@ -8,13 +8,6 @@ checkout:
   post:
     - git submodule sync
     - git submodule update --init --recursive
-
-dependencies:
-  override:
-    - pod install:
-        timeout: 1800
-  cache_directories:
-    - "~/.cocoapods/repos"
 test:
   override:
     - set -o pipefail &&
