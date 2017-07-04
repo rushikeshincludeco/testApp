@@ -20,7 +20,7 @@ test:
     - set -o pipefail &&
       xcodebuild
         -sdk iphonesimulator
-        -workspace testApp.xcworkspace
+        -workspace testApp.xcodeproj
         -scheme "testApp"
         clean build test |
       tee $CIRCLE_ARTIFACTS/xcode_raw.log |
