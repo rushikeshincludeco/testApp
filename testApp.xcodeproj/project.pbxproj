@@ -452,13 +452,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
 				DEVELOPMENT_TEAM = 8DMCVMABTV;
 				INFOPLIST_FILE = testApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.includetech.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.includetech.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1f59baee-5a72-4225-bf0d-06466ebe7356";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = TestApp;
 				SWIFT_VERSION = 3.0;
 			};
@@ -470,13 +470,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
 				DEVELOPMENT_TEAM = 8DMCVMABTV;
 				INFOPLIST_FILE = testApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.includetech.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.includetech.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1f59baee-5a72-4225-bf0d-06466ebe7356";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = TestApp;
 				SWIFT_VERSION = 3.0;
 			};
