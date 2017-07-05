@@ -41,4 +41,3 @@ deployment:
           --commit-sha       "$CIRCLE_SHA1"
           --build-server-url "$CIRCLE_BUILD_URL"
           --repository-url   "$CIRCLE_REPOSITORY_URL"
-
