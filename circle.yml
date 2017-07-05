@@ -28,7 +28,7 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-      - gym
+      - gym(scheme: "testApp", export_method: "ad-hoc")
       - ipa distribute:hockeyapp
           --file             /Users/distiller/testApp/testApp.ipa
           --token            "$HOCKEY_APP_TOKEN"
