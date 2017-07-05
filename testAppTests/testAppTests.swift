@@ -15,6 +15,11 @@ class testAppTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let expectation1 = expectation(description: "Creating User")
         expectation1.fulfill()
+        waitForExpectations(timeout: 1.0) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
 
     }
     
