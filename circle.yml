@@ -10,6 +10,7 @@ checkout:
 dependencies:
   pre:
     - gem install shenzhen
+    - sudo gem install fastlane
   override:
     - pod install:
         timeout: 1800
