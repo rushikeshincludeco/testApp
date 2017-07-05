@@ -3,6 +3,10 @@ machine:
     version: "8.3.1"
   environment:
     GYM_CODE_SIGNING_IDENTITY: "iPhone Developer: Rushikesh Pandit (5VH3LRJ3Q8)"
+  pre:
+    - sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+
+
 
 checkout:
   post:
