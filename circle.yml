@@ -14,19 +14,12 @@ dependencies:
         timeout: 1800
   cache_directories:
     - "~/.cocoapods"
-test:
-  override:
-    - set -o pipefail &&
-      xcodebuild
-        -sdk iphonesimulator
-        -workspace testApp.xcworkspace
-        -scheme "testApp"
-        -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
-        clean build test |
-      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
-      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+override:
+    - ./scripts/add-key.sh
+    - ipa build -c Distribution
+    - ./scripts/remove-key.sh
 deployment:
-  development:
-    branch: dev
+  hockey:
+    branch: master
     commands:
-      - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS$APK_PATH $HOCKEYAPP_TOKEN $HOCKEYAPP_APP_ID
+      - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEYAPP_TOKEN
