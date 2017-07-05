@@ -1,6 +1,6 @@
 machine:
   xcode:
-    version: "8.3"
+    version: "8.3.1"
   environment:
     GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Include Technologies (8DMCVMABTV)"
 checkout:
