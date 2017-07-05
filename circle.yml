@@ -1,22 +1,8 @@
-machine:
-  xcode:
-    version: "8.3.1"
-  environment:
-    GYM_CODE_SIGNING_IDENTITY: "iPhone Developer: Rushikesh Pandit (5VH3LRJ3Q8)"
-
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init --recursive
 dependencies:
   pre:
     - sudo gem install shenzhen
+test:
   override:
-    - pod install:
-        timeout: 1800
-  cache_directories:
-    - "~/.cocoapods"
-override:
     - ./scripts/add-key.sh
     - ipa build -c Distribution
     - ./scripts/remove-key.sh
