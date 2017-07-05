@@ -2,7 +2,7 @@ machine:
   xcode:
     version: "8.3.1"
   environment:
-    GYM_CODE_SIGNING_IDENTITY: "iPhone Developer: Rushikesh Pandit (5VH3LRJ3Q8)"
+    GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Include Technologies (8DMCVMABTV)"
 checkout:
   post:
     - git submodule sync
