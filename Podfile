@@ -6,5 +6,5 @@ target 'testApp' do
   use_frameworks!
 
   # Pods for testApp
-
+pod 'SnapKit', '~> 3.2'
 end
