@@ -9,6 +9,8 @@ checkout:
     - git submodule sync
     - git submodule update --init --recursive
 dependencies:
+  pre:
+    - sudo gem install shenzhen
   override:
     - pod install:
         timeout: 1800
