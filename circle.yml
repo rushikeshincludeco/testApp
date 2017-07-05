@@ -1,13 +1,32 @@
+machine:
+  xcode:
+    version: "8.3.1"
+  environment:
+    GYM_CODE_SIGNING_IDENTITY: "iPhone Developer: Rushikesh Pandit (5VH3LRJ3Q8)"
+
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init --recursive
 dependencies:
-  pre:
-    - sudo gem install shenzhen
+  override:
+    - pod install:
+        timeout: 1800
+  cache_directories:
+    - "~/.cocoapods"
 test:
   override:
-    - ./scripts/add-key.sh
-    - ipa build -c Distribution
-    - ./scripts/remove-key.sh
+    - set -o pipefail &&
+      xcodebuild
+        -sdk iphonesimulator
+        -workspace testApp.xcworkspace
+        -scheme "testApp"
+        -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
+        clean build test |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
 deployment:
-  hockey:
-    branch: master
+  development:
+    branch: dev
     commands:
-      - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEYAPP_TOKEN
+      - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS$APK_PATH $HOCKEYAPP_TOKEN $HOCKEYAPP_APP_ID
