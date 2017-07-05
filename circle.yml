@@ -32,6 +32,7 @@ deployment:
     branch: master
     commands:
       - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
+      - update_project_automatic_codesigning(path: "App.xcodeproj",use_automatic_signing: true)
       - ipa distribute:hockeyapp
           --file             /Users/distiller/testApp/testApp.ipa
           --token            "$HOCKEY_APP_TOKEN"
