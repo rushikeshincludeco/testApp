@@ -8,6 +8,8 @@ checkout:
     - git submodule sync
     - git submodule update --init --recursive
 dependencies:
+  pre:
+    - gem install shenzhen
   override:
     - pod install:
         timeout: 1800
@@ -28,6 +30,7 @@ deployment:
   beta_distribution:
     branch: master
     commands:
+      - gym
       - ipa distribute:hockeyapp
           --file             /Users/distiller/testApp/testApp.ipa
           --token            "$HOCKEY_APP_TOKEN"
