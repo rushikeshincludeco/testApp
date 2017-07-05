@@ -12,8 +12,8 @@ class test: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        let expectation = expectationWithDescription("Creating User")
-        expectation.fulfill()
+        let expectation1 = expectation(description: "Creating User")
+        expectation1.fulfill()
 
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
