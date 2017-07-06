@@ -31,4 +31,4 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-    - fastlane Debug
+    - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive
