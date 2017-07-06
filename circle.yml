@@ -32,5 +32,4 @@ deployment:
     branch: master
     commands:
       - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
-      - ipa distribute:hockeyapp
-          --token            "$HOCKEY_APP_TOKEN"
+      - xcodebuild -exportArchive -exportOptionsPlist /var/folders/h4/h01gq0dj0pgfh8mfvyw_xw6r0000gn/T/gym_config20170706-15352-1d80wjy.plist -archivePath '/Users/distiller/Library/Developer/Xcode/Archives/2017-07-06/testApp 2017-07-06 13.12.44.xcarchive' -exportPath /var/folders/h4/h01gq0dj0pgfh8mfvyw_xw6r0000gn/T/gym_output20170706-15352-9f9wns
