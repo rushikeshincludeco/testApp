@@ -32,3 +32,8 @@ deployment:
     branch: master
     commands:
     - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive
+    - ipa({
+    scheme: 'testApp',
+    clean: nil, # this means 'Do Clean'. Clean project before building.
+    archive: nil, # this means 'Do Archive'. Archive project to the Xcode organizer after building.
+  })
