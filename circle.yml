@@ -32,6 +32,7 @@ deployment:
     branch: master
     commands:
     - ipa build -c Debug --verbose
+    -  xcrun -sdk iphoneos PackageApplication -v foobar.app
     - ipa distribute:hockeyapp
           --file             /Users/distiller/testApp/testApp.ipa
           --token            "$HOCKEY_APP_TOKEN"
