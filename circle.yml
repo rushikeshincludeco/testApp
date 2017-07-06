@@ -31,7 +31,14 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-      - gym
+      - gym(
+        use_legacy_build_api: true,
+        clean: true,
+        scheme: "testApp",
+        codesigning_identity: "iPhone Distribution: Include Technologies (8DMCVMABTV)",
+        output_directory: "build/",
+        output_name: "testApp.ipa"
+    )
       - ipa distribute:hockeyapp
           --file             /Users/distiller/testApp/testApp.ipa
           --token            "$HOCKEY_APP_TOKEN"
