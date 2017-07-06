@@ -32,12 +32,10 @@ deployment:
     branch: master
     commands:
           - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive    
-          - curl \
-  -F "status=2" \
-  -F "notify=1" \
-  -F "notes=Some new features and fixed bugs." \
-  -F "notes_type=0" \
-  -F "ipa=@hockeyapp.ipa" \
-  -F "dsym=@hockeyapp.dSYM.zip" \
-  -H "X-HockeyAppToken: HOCKEY_APP_TOKEN" \
-  https://rink.hockeyapp.net/api/2/apps/upload
+          - ipa distribute:hockeyapp
+          --file             /Users/distiller/testApp/testApp.ipa
+          --token            "$HOCKEY_APP_TOKEN"
+          --notes            "CircleCI build $CIRCLE_BUILD_NUM"
+          --commit-sha       "$CIRCLE_SHA1"
+          --build-server-url "$CIRCLE_BUILD_URL"
+          --repository-url   "$CIRCLE_REPOSITORY_URL"
