@@ -31,4 +31,4 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-      - fastlane gym --scheme "testApp" --workspace "testApp.xcworkspace"
+      - fastlane --scheme "testApp" --workspace "testApp.xcworkspace"
