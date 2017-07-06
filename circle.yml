@@ -30,4 +30,4 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-      - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
+      -  gym(scheme: "testApp", workspace: "testApp.xcworkspace", include_bitcode: true)
