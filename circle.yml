@@ -30,4 +30,4 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-      -  gym(scheme: "testApp", workspace: "testApp.xcworkspace", include_bitcode: true)
+      -  fastlane gym(scheme: "testApp", workspace: "testApp.xcworkspace", include_bitcode: true)
