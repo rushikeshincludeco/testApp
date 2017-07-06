@@ -27,20 +27,3 @@ test:
         clean build test |
       tee $CIRCLE_ARTIFACTS/xcode_raw.log |
       xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
-deployment:
-  beta_distribution:
-    branch: master
-    commands:
-      - sigh({ app_identifier: ENV["BUNDLE_IDENTIFIER"],
-                username: ENV["APPLE_ID"],
-                team_id: ENV["APPLE_TEAM_ID"],
-                output_path: ENV["BUILD_PATH"]
-              })
-
-      -  ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
-
-      -  gym(clean: true,
-           export_method: 'enterprise',
-          output_directory: ENV["BUILD_PATH"],
-          output_name: "testApp-#{lane_context[SharedValues::BUILD_NUMBER]}",
-          scheme: "testApp" )
