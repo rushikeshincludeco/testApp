@@ -32,7 +32,7 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-          - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
+          - fastlane gym
           - ipa distribute:hockeyapp
           --file             /Users/distiller/testApp/testApp.ipa
           --token            "$HOCKEY_APP_TOKEN"
