@@ -32,9 +32,3 @@ deployment:
     branch: master
     commands:
       - gym --scheme "testApp" --workspace "testApp.xcworkspace"
- lane :beta do
-  sigh
-  gym
-  hockey
- 
-end
