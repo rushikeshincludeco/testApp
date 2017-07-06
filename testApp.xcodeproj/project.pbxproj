@@ -447,7 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 8DMCVMABTV;
 				INFOPLIST_FILE = testApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -465,7 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 8DMCVMABTV;
 				INFOPLIST_FILE = testApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -487,7 +487,7 @@
 				62238D6A1F0CC68D00B59E5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		6269BCC61F0BB61200F02862 /* Build configuration list for PBXProject "testApp" */ = {
 			isa = XCConfigurationList;
@@ -496,7 +496,7 @@
 				6269BCDC1F0BB61200F02862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		6269BCDD1F0BB61200F02862 /* Build configuration list for PBXNativeTarget "testApp" */ = {
 			isa = XCConfigurationList;
@@ -505,7 +505,7 @@
 				6269BCDF1F0BB61200F02862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
