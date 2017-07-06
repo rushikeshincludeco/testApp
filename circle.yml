@@ -9,7 +9,6 @@ checkout:
     - git submodule update --init --recursive
 dependencies:
   pre:
-    - gem install shenzhen
     - sudo gem install fastlane
   override:
     - pod install:
@@ -31,6 +30,4 @@ test:
   beta_distribution:
     branch: master
     commands:
-      - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive
-      - ipa distribute:hockeyapp -a HOCKEY_APP_TOKEN
-
+      - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
