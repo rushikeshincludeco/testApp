@@ -32,8 +32,8 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-         - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive -exportArchive = "/Users/distiller/testApp/testApp.ipa" -archivePath "/Users/distiller/testApp/testApp.ipa" -exportPath "/Users/distiller/testApp/testApp.ipa"
-         - ipa distribute:hockeyapp
+          - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
+          - ipa distribute:hockeyapp
           --file             /Users/distiller/testApp/testApp.ipa
           --token            "$HOCKEY_APP_TOKEN"
           --notes            "CircleCI build $CIRCLE_BUILD_NUM"
