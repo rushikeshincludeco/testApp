@@ -31,10 +31,8 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-          - lane :beta do
-              gym(scheme: "testApp", workspace: "testApp.xcworkspace")
-             end
-          - hockey (
+      - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
+      - hockey (
             api_token: "...",
              ipa: "./app.ipa",
               notes: "Changelog")
