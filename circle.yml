@@ -32,4 +32,11 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-          - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS$IPA_PATH $HOCKEY_APP_TOKEN $HOCKEYAPP_APP_ID
+         - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive
+         - ipa distribute:hockeyapp
+          --file             /Users/distiller/testApp/testApp.ipa
+          --token            "$HOCKEY_APP_TOKEN"
+          --notes            "CircleCI build $CIRCLE_BUILD_NUM"
+          --commit-sha       "$CIRCLE_SHA1"
+          --build-server-url "$CIRCLE_BUILD_URL"
+          --repository-url   "$CIRCLE_REPOSITORY_URL"
