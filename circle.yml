@@ -32,7 +32,5 @@ deployment:
     branch: master
     commands:
       - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
-      - hockey (
-            api_token: "...",
-             ipa: "./app.ipa",
-              notes: "Changelog")
+      - ipa distribute:hockeyapp
+          --token            "$HOCKEY_APP_TOKEN"
