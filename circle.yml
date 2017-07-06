@@ -3,7 +3,7 @@ machine:
     version: "8.3.1"
   environment:
     GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Include Technologies (8DMCVMABTV)"
-    APK_PATH: '/outputs/ipa/app-debug.ipa'
+    IPA_PATH: '/outputs/ipa/app-debug.ipa'
 checkout:
   post:
     - git submodule sync
