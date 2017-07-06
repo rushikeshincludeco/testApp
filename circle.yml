@@ -31,5 +31,16 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-      - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
-      - xcodebuild -exportArchive -exportOptionsPlist /var/folders/h4/h01gq0dj0pgfh8mfvyw_xw6r0000gn/T/gym_config20170706-15352-1d80wjy.plist -archivePath '/Users/distiller/Library/Developer/Xcode/Archives/2017-07-06/testApp 2017-07-06 13.12.44.xcarchive' -exportPath /var/folders/h4/h01gq0dj0pgfh8mfvyw_xw6r0000gn/T/gym_output20170706-15352-9f9wns
+      - sigh({ app_identifier: ENV["BUNDLE_IDENTIFIER"],
+                username: ENV["APPLE_ID"],
+                team_id: ENV["APPLE_TEAM_ID"],
+                output_path: ENV["BUILD_PATH"]
+              })
+
+      -  ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+
+      -  gym(clean: true,
+           export_method: 'enterprise',
+          output_directory: ENV["BUILD_PATH"],
+          output_name: "testApp-#{lane_context[SharedValues::BUILD_NUMBER]}",
+          scheme: "testApp" )
