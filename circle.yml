@@ -32,4 +32,4 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-          - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS$IPA_PATH $HOCKEYAPP_TOKEN $HOCKEYAPP_APP_ID
+          - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS$IPA_PATH $HOCKEY_APP_TOKEN $HOCKEYAPP_APP_ID
