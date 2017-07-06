@@ -38,7 +38,6 @@ deployment:
          --form "notes=test_build" \
          --form "notes_type=1" \
          --form "ipa=@${HOCKEYAPP_EXPORT_IPA_PATH}" \
-         --form "tags=${CURL_TAGS}" \
          --form "release_type=2" \
          --header "X-HockeyAppToken: ${HOCKEY_APP_TOKEN}" \
          "https://upload.hockeyapp.net/api/2/apps/${HOCKEYAPP_APP_ID}/app_versions/upload"
