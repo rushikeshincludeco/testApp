@@ -27,3 +27,10 @@ test:
         clean build test |
       tee $CIRCLE_ARTIFACTS/xcode_raw.log |
       xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+      deployment:
+  beta_distribution:
+    branch: master
+    commands:
+      - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive
+      - ipa distribute:hockeyapp -a HOCKEY_APP_TOKEN
+
