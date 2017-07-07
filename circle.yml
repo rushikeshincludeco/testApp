@@ -1,3 +1,5 @@
+general:
+  build_number : 10
 machine:
   xcode:
     version: "8.3.2"
