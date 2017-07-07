@@ -32,5 +32,5 @@ deployment:
     commands:
        - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive
        - xcodebuild archive -workspace testApp.xcworkspace -scheme testApp -archivePath testApp.xcarchive
-       - xcodebuild -exportArchive -archivePath testApp.xcarchive -exportPath ./ -exportProvisioningProfile $APP_SIGNING
+       - xcodebuild -exportArchive -archivePath testApp.xcarchive -exportPath ./
        - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEY_APP_TOKEN
