@@ -22,6 +22,10 @@ ACCESS_TOKEN=$2
 
 echo $ACCESS_TOKEN
 
+BUILD_NUMBER=$4
+
+mv *.ipa *-$BUILD_NUMBER.ipa
+
 # Theird one is application id
 APP_ID=$3
 

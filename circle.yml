@@ -16,4 +16,4 @@ deployment:
     commands:
        - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Release' clean build archive -archivePath $CIRCLE_ARTIFACTS/testApp.xcarchive
        - xcodebuild -exportArchive -archivePath $CIRCLE_ARTIFACTS/testApp.xcarchive -exportOptionsPlist "exportOptions.plist" -exportPath $CIRCLE_ARTIFACTS
-       - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS/testApp.ipa $HOCKEY_APP_TOKEN $HOCKEYAPP_APP_ID
+       - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS/testApp.ipa $HOCKEY_APP_TOKEN $HOCKEYAPP_APP_ID $CIRCLE_BUILD_NUM
