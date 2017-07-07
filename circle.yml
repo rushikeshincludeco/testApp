@@ -29,4 +29,5 @@ deployment:
   hockey:
     branch: master
     commands:
-       - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Release' clean build archive
+       - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Release' clean build archive -archivePath $CIRCLE_ARTIFACTS/testApp.xcarchive
+       - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS/testApp.xcarchive $HOCKEY_APP_TOKEN $HOCKEY_APP_ID
