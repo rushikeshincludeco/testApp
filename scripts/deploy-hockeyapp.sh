@@ -27,7 +27,7 @@ curl \
 -F "status=2" \
 -F "notify=0" \
 -F "notes=CircleCI Build" \
--F "ipa=@$APK_PATH" \
+-F "ipa=@$IPA_PATH" \
 -H "X-HockeyAppToken:$ACCESS_TOKEN" \
 https://rink.hockeyapp.net/api/2/apps/$APP_ID/app_versions/upload
 
