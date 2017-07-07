@@ -7,7 +7,7 @@
 	<key>teamID</key>
 	<string>8DMCVMABTV</string>
 	<key>uploadSymbols</key>
-	<true/>
+	<false/>
 	<key>uploadBitcode</key>
 	<false/>
 </dict>
