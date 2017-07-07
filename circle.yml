@@ -31,5 +31,5 @@ deployment:
     branch: master
     commands:
        - xcodebuild archive -workspace testApp.xcworkspace -scheme testApp -archivePath testApp.xcarchive
-       - xcodebuild -exportArchive -archivePath testApp.xcarchive -exportPath ./ -exportFormat ipa -exportProvisioningProfile "iPhone Distribution: Include Technologies (8DMCVMABTV)"
+       - xcodebuild -exportArchive -archivePath testApp.xcarchive -exportPath ./ -exportFormat ipa -exportProvisioningProfile "iPhone Distribution\: Include Technologies (8DMCVMABTV)"
        - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEY_APP_TOKEN
