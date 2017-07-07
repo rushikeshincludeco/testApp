@@ -29,5 +29,4 @@ deployment:
   hockey:
     branch: master
     commands:
-       - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
-       - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEY_APP_TOKEN
+       - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Release' clean build archive
