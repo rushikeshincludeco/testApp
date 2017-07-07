@@ -4,7 +4,7 @@ machine:
   xcode:
     version: "8.3.2"
   environment:
-    GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Include Technologies (8DMCVMABTV)"
+    GYM_CODE_SIGNING_IDENTITY: APP_SIGNING
 dependencies:
   override:
     - pod install:
