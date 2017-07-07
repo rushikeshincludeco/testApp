@@ -30,7 +30,5 @@ deployment:
   hockey:
     branch: master
     commands:
-       - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Debug' clean build archive
-       - xcodebuild archive -workspace testApp.xcworkspace -scheme testApp -archivePath testApp.xcarchive
-       - xcodebuild -exportArchive -archivePath testApp.xcarchive -exportPath ./
+       - xcodebuild -exportArchive -exportFormat APP -archivePath testApp.xcarchive -exportPath testApp.pkg -exportSigningIdentity 'iPhone Distribution: Include Technologies (8DMCVMABTV)'
        - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEY_APP_TOKEN
