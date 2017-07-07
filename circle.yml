@@ -4,9 +4,6 @@ machine:
   environment:
     GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Include Technologies (8DMCVMABTV)"
 dependencies:
-  pre:
-    rvm use system
-
   override:
     - pod install:
         timeout: 1800
@@ -18,5 +15,6 @@ deployment:
     branch: master
     commands:
        - xcodebuild -sdk iphoneos -workspace "testApp.xcworkspace" -scheme "testApp" -configuration 'Release' clean build archive -archivePath $CIRCLE_ARTIFACTS/testApp.xcarchive
+       - rvm use system
        - xcodebuild -exportArchive -archivePath $CIRCLE_ARTIFACTS/testApp.xcarchive -exportOptionsPlist "exportOptions.plist" -exportPath $CIRCLE_ARTIFACTS
        - sh ./scripts/deploy-hockeyapp.sh $CIRCLE_ARTIFACTS/testApp.ipa $HOCKEY_APP_TOKEN $HOCKEYAPP_APP_ID
