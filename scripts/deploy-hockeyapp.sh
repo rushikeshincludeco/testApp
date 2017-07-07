@@ -13,7 +13,9 @@ IPA_PATH=$1
 
 echo $IPA_PATH
 
-echo basename $IPA_PATH
+fname=basename $IPA_PATH
+echo $fname
+
 
 # Second parameter expected as access token
 ACCESS_TOKEN=$2
