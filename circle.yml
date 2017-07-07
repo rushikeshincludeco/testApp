@@ -3,13 +3,12 @@ machine:
     version: "8.3.1"
   environment:
     GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Include Technologies (8DMCVMABTV)"
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init --recursive
 dependencies:
   pre:
     - sudo gem install shenzhen
+    - sudo gem install fastlane
+    - sudo gem install gym
+    - sudo gem install bundler
   override:
     - pod install:
         timeout: 1800
@@ -30,5 +29,5 @@ deployment:
   hockey:
     branch: master
     commands:
-       - xcodebuild -exportArchive -exportFormat IPA -archivePath testApp.xcarchive -exportPath testApp.ipa -exportSigningIdentity $APP_SIGNING
+       - fastlane gym --workspace "testApp.xcworkspace" --scheme "testApp" --clean
        - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEY_APP_TOKEN
