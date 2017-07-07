@@ -226,16 +226,16 @@
 /* Begin PBXShellScriptBuildPhase section */
 		6221468A1F0FEF2F00EA2537 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n# Set the build number to \"DEVELOPMENT\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion DEVELOPMENT\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 		};
 		78E8D293353238CEB0E3A049 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -462,6 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
+				CURRENT_PROJECT_VERSION = "";
 				DEVELOPMENT_TEAM = 8DMCVMABTV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = testApp/Info.plist;
@@ -471,6 +472,7 @@
 				PROVISIONING_PROFILE = "4dfc8792-bda3-4577-8aa4-faed2f8db732";
 				PROVISIONING_PROFILE_SPECIFIER = testApp;
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};
@@ -481,6 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Include Technologies (8DMCVMABTV)";
+				CURRENT_PROJECT_VERSION = "";
 				DEVELOPMENT_TEAM = 8DMCVMABTV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = testApp/Info.plist;
@@ -490,6 +493,7 @@
 				PROVISIONING_PROFILE = "4dfc8792-bda3-4577-8aa4-faed2f8db732";
 				PROVISIONING_PROFILE_SPECIFIER = testApp;
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};
