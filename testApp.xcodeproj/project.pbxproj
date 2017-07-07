@@ -179,7 +179,7 @@
 					6269BCCA1F0BB61200F02862 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 8DMCVMABTV;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -453,8 +453,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.includetech.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "4dfc8792-bda3-4577-8aa4-faed2f8db732";
+				PROVISIONING_PROFILE_SPECIFIER = testApp;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -471,8 +471,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.includetech.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "4dfc8792-bda3-4577-8aa4-faed2f8db732";
+				PROVISIONING_PROFILE_SPECIFIER = testApp;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
